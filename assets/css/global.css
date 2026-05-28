@@ -56,13 +56,24 @@ body.fade-out {
 }
 
 input {
+    width: 100%;
+    max-width: 400px; 
+    box-sizing: border-box; 
     padding: 12px;
+    margin-bottom: 15px; 
     font-family: var(--font-main);
     background-color: #333;
     color: white;
     border: 1px solid #555;
-    margin-right: 10px;
     outline: none;
+    text-align: center; 
+}
+
+.start-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
 }
 
 button {
@@ -118,8 +129,10 @@ button:hover {
     }
 
     .start-form {
+        display: flex;
         flex-direction: column;
         align-items: center;
+        margin-top: 20px;
     }
 
     .start-form input {
