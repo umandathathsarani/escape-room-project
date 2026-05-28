@@ -78,3 +78,20 @@
     color: var(--accent-color);
     border: 1px solid #555;
 }
+
+.plant-dropzone {
+    width: 120px;
+    height: 150px;
+    background-color: #1c331c;
+    border: 2px dashed #446644;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #88aa88;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.plant-dropzone.drag-over {
+    background-color: #2e552e;
+    border-color: #66ff66;
+}

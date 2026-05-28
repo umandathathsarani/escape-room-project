@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Conservatory | Escape Room</title>
+    <link rel="icon" type="image/png" href="assets/icons/padlock.png">
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/inventory.css">
+    <link rel="stylesheet" href="assets/css/puzzles.css">
+</head>
+<body>
+    <header id="game-header">
+        <div class="timer-display">Time Remaining: <span id="time-left">--:--</span></div>
+    </header>
+
+    <main class="room-container">
+        <h1>The Conservatory</h1>
+        <p>The room is humid. Three large, overgrown plants sit in the center. If you have a light source, try dragging it over them to look for clues.</p>
+        
+        <div class="puzzle-area">
+            <div class="plant-dropzone" id="plant-1">Fern</div>
+            <div class="plant-dropzone" id="special-plant">Venus Flytrap</div>
+            <div class="plant-dropzone" id="plant-3">Orchid</div>
+        </div>
+
+        <div id="key-reward" class="hidden">
+            <p>The UV light illuminates a glowing Brass Key hidden in the dirt!</p>
+            <button id="take-key-btn">Take Key</button>
+        </div>
+
+        <div id="message-box" class="hidden"></div>
+
+        <a href="gallery.html" class="nav-button">Back to Art Gallery</a>
+        <a href="study.html" class="nav-button">Enter the Study</a>
+    </main>
+
+    <div id="inventory-bar"></div>
+
+    <script src="assets/js/timer.js"></script>
+    <script src="assets/js/inventory.js"></script>
+    <script src="assets/js/puzzles.js"></script>
+</body>
+</html>

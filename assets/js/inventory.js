@@ -10,6 +10,12 @@ function updateInventoryUI() {
         img.src = `assets/icons/${item}.png`;
         img.alt = item;
         img.className = 'inventory-item';
+        img.draggable = true;
+        
+        img.addEventListener('dragstart', (e) => {
+            e.dataTransfer.setData('text/plain', item);
+        });
+        
         inventoryBar.appendChild(img);
     });
 }

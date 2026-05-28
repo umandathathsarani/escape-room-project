@@ -63,3 +63,59 @@ if (takeFlashlightBtn) {
         takeFlashlightBtn.innerText = 'Collected';
     });
 }
+
+const plants = document.querySelectorAll('.plant-dropzone');
+const keyReward = document.getElementById('key-reward');
+const takeKeyBtn = document.getElementById('take-key-btn');
+
+if (plants.length > 0) {
+    plants.forEach(plant => {
+        plant.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            plant.classList.add('drag-over');
+        });
+
+        plant.addEventListener('dragleave', () => {
+            plant.classList.remove('drag-over');
+        });
+
+        plant.addEventListener('drop', (e) => {
+            e.preventDefault();
+            plant.classList.remove('drag-over');
+            
+            const draggedItem = e.dataTransfer.getData('text/plain');
+
+            if (draggedItem === 'flashlight') {
+                if (plant.id === 'special-plant') {
+                    keyReward.classList.remove('hidden');
+                    if (messageBox) {
+                        messageBox.innerText = "You found something!";
+                        messageBox.classList.remove('hidden');
+                        setTimeout(() => messageBox.classList.add('hidden'), 3000);
+                    }
+                } else {
+                    if (messageBox) {
+                        messageBox.innerText = "Just ordinary dirt here.";
+                        messageBox.classList.remove('hidden');
+                        setTimeout(() => messageBox.classList.add('hidden'), 3000);
+                    }
+                }
+            }
+        });
+    });
+}
+
+if (takeKeyBtn) {
+    takeKeyBtn.addEventListener('click', () => {
+        let inventory = JSON.parse(localStorage.getItem('escapeInventory')) || [];
+        
+        if (!inventory.includes('key')) {
+            inventory.push('key');
+            localStorage.setItem('escapeInventory', JSON.stringify(inventory));
+            updateInventoryUI();
+        }
+        
+        takeKeyBtn.disabled = true;
+        takeKeyBtn.innerText = 'Collected';
+    });
+}
