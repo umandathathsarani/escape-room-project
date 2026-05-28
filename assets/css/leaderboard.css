@@ -64,12 +64,17 @@
     gap: 15px;
 }
 
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
 @media (max-width: 768px) {
     .leaderboard-table {
-        display: block;
-        overflow-x: auto; 
         white-space: nowrap;
         font-size: 14px;
+        min-width: 600px; 
     }
 
     .leaderboard-table th, 
