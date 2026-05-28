@@ -218,9 +218,10 @@ if (unlockVaultBtn) {
         
         if (pass === 'NOVA') {
             playSound('success.mp3');
+            document.body.classList.add('fade-out');
             setTimeout(() => {
                 window.location.href = 'success.html';
-            }, 500); 
+            }, 500);
         } else {
             playSound('error.mp3');
             vaultPassword.value = '';
