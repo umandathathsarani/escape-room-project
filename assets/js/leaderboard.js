@@ -1,5 +1,8 @@
 const leaderboardBody = document.getElementById('leaderboard-body');
 const clearBtn = document.getElementById('clear-records-btn');
+const confirmModal = document.getElementById('custom-confirm-modal');
+const confirmBtn = document.getElementById('modal-confirm-btn');
+const cancelBtn = document.getElementById('modal-cancel-btn');
 
 function renderLeaderboard() {
     if (!leaderboardBody) return;
@@ -28,12 +31,19 @@ function renderLeaderboard() {
     });
 }
 
-if (clearBtn) {
+if (clearBtn && confirmModal && confirmBtn && cancelBtn) {
     clearBtn.addEventListener('click', () => {
-        if(confirm("Are you sure you want to permanently delete all player records?")) {
-            localStorage.removeItem('escapeLeaderboard');
-            renderLeaderboard();
-        }
+        confirmModal.classList.remove('hidden');
+    });
+
+    cancelBtn.addEventListener('click', () => {
+        confirmModal.classList.add('hidden');
+    });
+
+    confirmBtn.addEventListener('click', () => {
+        localStorage.removeItem('escapeLeaderboard');
+        renderLeaderboard();
+        confirmModal.classList.add('hidden');
     });
 }
 

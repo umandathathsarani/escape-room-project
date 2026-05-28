@@ -30,6 +30,17 @@
         <button id="clear-records-btn" style="background-color: #552222; margin-left: 10px;">Clear Archives</button>
     </main>
 
+    <div id="custom-confirm-modal" class="hidden">
+        <div class="modal-content">
+            <h2 style="margin-top: 0; color: #ff6666;">Clear Archives?</h2>
+            <p>Are you sure you want to permanently delete all player records? This cannot be undone.</p>
+            <div class="modal-actions">
+                <button id="modal-confirm-btn" style="background-color: #aa4444;">Yes, Delete</button>
+                <button id="modal-cancel-btn" style="background-color: #444;">Cancel</button>
+            </div>
+        </div>
+    </div>
+
     <script src="assets/js/leaderboard.js"></script>
 </body>
 </html>
