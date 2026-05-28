@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Vault | Escape Room</title>
+    <link rel="icon" type="image/png" href="assets/icons/analysis.png">
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/inventory.css">
+    <link rel="stylesheet" href="assets/css/puzzles.css">
+</head>
+<body>
+    <header id="game-header">
+        <div class="timer-display">Time Remaining: <span id="time-left">--:--</span></div>
+    </header>
+
+    <main class="room-container">
+        <h1>The Vault</h1>
+        <p>A massive steel door blocks your exit. It requires a physical key and a voice-activated passcode.</p>
+
+        <div class="vault-panel">
+            <div class="keyhole-dropzone" id="vault-keyhole">Drop Key Here</div>
+            <input type="text" id="vault-password" placeholder="Enter Passcode" disabled>
+            <button id="unlock-vault-btn" disabled>Unlock Vault</button>
+        </div>
+
+        <div id="message-box" class="hidden"></div>
+
+        <a href="study.html" class="nav-button">Back to Study</a>
+    </main>
+
+    <div id="inventory-bar"></div>
+
+    <script src="assets/js/timer.js"></script>
+    <script src="assets/js/inventory.js"></script>
+    <script src="assets/js/puzzles.js"></script>
+</body>
+</html>

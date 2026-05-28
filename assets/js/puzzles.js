@@ -155,3 +155,55 @@ function checkPaperPuzzle() {
         }
     }
 }
+
+const vaultKeyhole = document.getElementById('vault-keyhole');
+const vaultPassword = document.getElementById('vault-password');
+const unlockVaultBtn = document.getElementById('unlock-vault-btn');
+
+if (vaultKeyhole) {
+    vaultKeyhole.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        vaultKeyhole.classList.add('drag-over');
+    });
+
+    vaultKeyhole.addEventListener('dragleave', () => {
+        vaultKeyhole.classList.remove('drag-over');
+    });
+
+    vaultKeyhole.addEventListener('drop', (e) => {
+        e.preventDefault();
+        vaultKeyhole.classList.remove('drag-over');
+        
+        const draggedItem = e.dataTransfer.getData('text/plain');
+
+        if (draggedItem === 'key') {
+            vaultKeyhole.classList.add('inserted');
+            vaultKeyhole.innerText = "Key Inserted";
+            vaultPassword.disabled = false;
+            unlockVaultBtn.disabled = false;
+            
+            if (messageBox) {
+                messageBox.innerText = "Key accepted. Enter passcode.";
+                messageBox.classList.remove('hidden');
+                setTimeout(() => messageBox.classList.add('hidden'), 3000);
+            }
+        }
+    });
+}
+
+if (unlockVaultBtn) {
+    unlockVaultBtn.addEventListener('click', () => {
+        const pass = vaultPassword.value.trim().toUpperCase();
+        
+        if (pass === 'NOVA') {
+            window.location.href = 'success.html';
+        } else {
+            vaultPassword.value = '';
+            if (messageBox) {
+                messageBox.innerText = "Access Denied.";
+                messageBox.classList.remove('hidden');
+                setTimeout(() => messageBox.classList.add('hidden'), 3000);
+            }
+        }
+    });
+}
