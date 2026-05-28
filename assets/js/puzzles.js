@@ -119,3 +119,39 @@ if (takeKeyBtn) {
         takeKeyBtn.innerText = 'Collected';
     });
 }
+
+const paperPieces = document.querySelectorAll('.paper-piece');
+const studyReward = document.getElementById('study-reward');
+
+if (paperPieces.length > 0) {
+    paperPieces.forEach(piece => {
+        piece.addEventListener('click', () => {
+            let currentRotation = parseInt(piece.getAttribute('data-rotation'));
+            currentRotation += 90;
+            piece.setAttribute('data-rotation', currentRotation);
+            piece.style.transform = `rotate(${currentRotation}deg)`;
+
+            checkPaperPuzzle();
+        });
+    });
+}
+
+function checkPaperPuzzle() {
+    let solved = true;
+    
+    paperPieces.forEach(piece => {
+        const rotation = parseInt(piece.getAttribute('data-rotation'));
+        if (rotation % 360 !== 0) {
+            solved = false;
+        }
+    });
+
+    if (solved && studyReward) {
+        studyReward.classList.remove('hidden');
+        if (messageBox) {
+            messageBox.innerText = "Password revealed!";
+            messageBox.classList.remove('hidden');
+            setTimeout(() => messageBox.classList.add('hidden'), 3000);
+        }
+    }
+}

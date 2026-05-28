@@ -95,3 +95,30 @@
     background-color: #2e552e;
     border-color: #66ff66;
 }
+
+.paper-puzzle-area {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.paper-piece {
+    width: 60px;
+    height: 80px;
+    background-color: #e8dcc4;
+    color: #111;
+    font-size: 32px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #a69b85;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+    cursor: pointer;
+    -webkit-user-select: none; 
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    transition: transform 0.3s ease;
+}

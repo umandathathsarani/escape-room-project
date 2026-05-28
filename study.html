@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Detective's Study | Escape Room</title>
+    <link rel="icon" type="image/png" href="assets/icons/detective (1).png">
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/inventory.css">
+    <link rel="stylesheet" href="assets/css/puzzles.css">
+</head>
+<body>
+    <header id="game-header">
+        <div class="timer-display">Time Remaining: <span id="time-left">--:--</span></div>
+    </header>
+
+    <main class="room-container">
+        <h1>The Detective's Study</h1>
+        <p>Scraps of a torn letter are scattered on the desk. Click to rotate them and reveal the vault password.</p>
+
+        <div class="paper-puzzle-area">
+            <div class="paper-piece" data-rotation="90" style="transform: rotate(90deg);">N</div>
+            <div class="paper-piece" data-rotation="270" style="transform: rotate(270deg);">O</div>
+            <div class="paper-piece" data-rotation="180" style="transform: rotate(180deg);">V</div>
+            <div class="paper-piece" data-rotation="90" style="transform: rotate(90deg);">A</div>
+        </div>
+
+        <div id="study-reward" class="hidden">
+            <p>The pieces align perfectly. The vault password is: <br><strong style="font-size: 24px; color: var(--accent-color);">NOVA</strong></p>
+        </div>
+
+        <div id="message-box" class="hidden"></div>
+
+        <a href="greenhouse.html" class="nav-button">Back to Conservatory</a>
+        <a href="basement.html" class="nav-button">Enter The Vault</a>
+    </main>
+
+    <div id="inventory-bar"></div>
+
+    <script src="assets/js/timer.js"></script>
+    <script src="assets/js/inventory.js"></script>
+    <script src="assets/js/puzzles.js"></script>
+</body>
+</html>
