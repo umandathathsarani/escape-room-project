@@ -21,9 +21,6 @@ This project was built to demonstrate advanced Front-End development skills, inc
 * **JavaScript (ES6+):** Modular scripts, event delegation, time parsing, and local storage manipulation.
 * **Hosting:** Deployed seamlessly via Netlify.
 
-## 📸 Screenshots
-*(Add a few screenshots of your Foyer, Library, and Vault here by dragging the image files directly into the GitHub editor!)*
-
 ## 📂 Project Structure
 ```text
 ├── assets/
