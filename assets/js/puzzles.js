@@ -232,3 +232,25 @@ if (unlockVaultBtn) {
         }
     });
 }
+
+const hintBtn = document.getElementById('hint-btn');
+
+if (hintBtn) {
+    hintBtn.addEventListener('click', () => {
+        const hintText = hintBtn.getAttribute('data-hint');
+       
+        if (window.applyTimePenalty) {
+            window.applyTimePenalty(1);
+            playSound('error.mp3'); 
+        }
+
+        if (messageBox) {
+            messageBox.innerText = `HINT: ${hintText}`;
+            messageBox.classList.remove('hidden');
+            setTimeout(() => messageBox.classList.add('hidden'), 5000);
+        }
+
+        hintBtn.disabled = true;
+        hintBtn.innerText = "Hint Used (-1 Min)";
+    });
+}

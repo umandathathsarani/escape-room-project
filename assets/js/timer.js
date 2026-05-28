@@ -38,3 +38,17 @@ if (timeDisplay) {
         }
     }, 1000);
 }
+
+window.applyTimePenalty = function(minutes) {
+    let endTime = localStorage.getItem('escapeEndTime');
+    if (endTime) {
+        endTime = parseInt(endTime) - (minutes * 60 * 1000);
+        localStorage.setItem('escapeEndTime', endTime);
+   
+        const timerDisplay = document.getElementById('time-left');
+        if (timerDisplay) {
+            timerDisplay.style.color = '#ff4444';
+            setTimeout(() => timerDisplay.style.color = '', 1000);
+        }
+    }
+};

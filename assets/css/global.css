@@ -66,3 +66,22 @@ button {
 button:hover {
     background-color: #ff0000;
 }
+
+.hint-btn {
+    background-color: #aa6622;
+    color: #fff;
+    margin-top: 20px;
+    font-size: 14px;
+    border: 1px solid #ff9933;
+}
+
+.hint-btn:hover {
+    background-color: #cc7722;
+}
+
+.hint-btn:disabled {
+    background-color: #444;
+    border-color: #555;
+    color: #888;
+    cursor: not-allowed;
+}
