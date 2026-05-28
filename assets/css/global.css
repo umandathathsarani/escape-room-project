@@ -6,7 +6,12 @@
 }
 
 body {
-    background-color: var(--bg-color);
+    background-color: rgba(18, 18, 18, 0.85);
+    background-blend-mode: overlay;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     color: var(--text-color);
     font-family: var(--font-main);
     margin: 0;
@@ -17,6 +22,15 @@ body {
     align-items: center;
     height: 100vh;
 }
+
+.bg-foyer { background-image: url('../images/foyer.jpg'); }
+.bg-library { background-image: url('../images/library.jpg'); }
+.bg-gallery { background-image: url('../images/gallery.jpg'); }
+.bg-greenhouse { background-image: url('../images/greenhouse.jpg'); }
+.bg-study { background-image: url('../images/study.jpg'); }
+.bg-vault { background-image: url('../images/vault.jpg'); }
+.bg-success { background-image: url('../images/success.jpg'); }
+.bg-gameover { background-image: url('../images/gameover.jpg'); }
 
 .room-container {
     text-align: center;
