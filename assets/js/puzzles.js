@@ -56,7 +56,9 @@ if (takeFlashlightBtn) {
         if (!inventory.includes('flashlight')) {
             inventory.push('flashlight');
             localStorage.setItem('escapeInventory', JSON.stringify(inventory));
-            updateInventoryUI();
+            if (typeof updateInventoryUI === 'function') {
+                updateInventoryUI();
+            }
         }
         
         takeFlashlightBtn.disabled = true;
@@ -112,7 +114,9 @@ if (takeKeyBtn) {
         if (!inventory.includes('key')) {
             inventory.push('key');
             localStorage.setItem('escapeInventory', JSON.stringify(inventory));
-            updateInventoryUI();
+            if (typeof updateInventoryUI === 'function') {
+                updateInventoryUI();
+            }
         }
         
         takeKeyBtn.disabled = true;
@@ -122,6 +126,7 @@ if (takeKeyBtn) {
 
 const paperPieces = document.querySelectorAll('.paper-piece');
 const studyReward = document.getElementById('study-reward');
+const vaultLink = document.getElementById('vault-link');
 
 if (paperPieces.length > 0) {
     paperPieces.forEach(piece => {
@@ -148,8 +153,11 @@ function checkPaperPuzzle() {
 
     if (solved && studyReward) {
         studyReward.classList.remove('hidden');
+        if (vaultLink) {
+            vaultLink.classList.remove('hidden');
+        }
         if (messageBox) {
-            messageBox.innerText = "Password revealed!";
+            messageBox.innerText = "Password revealed! The Vault is unlocked.";
             messageBox.classList.remove('hidden');
             setTimeout(() => messageBox.classList.add('hidden'), 3000);
         }
