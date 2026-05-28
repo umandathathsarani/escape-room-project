@@ -1,0 +1,52 @@
+:root {
+    --bg-color: #121212; 
+    --text-color: #e0e0e0;
+    --accent-color: #8b0000; 
+    --font-main: 'Courier New', Courier, monospace; 
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-main);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+}
+
+.room-container {
+    text-align: center;
+    max-width: 600px;
+    padding: 2.5rem;
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.9);
+}
+
+input {
+    padding: 12px;
+    font-family: var(--font-main);
+    background-color: #333;
+    color: white;
+    border: 1px solid #555;
+    margin-right: 10px;
+    outline: none;
+}
+
+button {
+    padding: 12px 24px;
+    font-family: var(--font-main);
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff0000;
+}
