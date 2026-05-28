@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Art Gallery | Escape Room</title>
+    <link rel="icon" type="image/png" href="assets/icons/flashlight.png">
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/inventory.css">
+    <link rel="stylesheet" href="assets/css/puzzles.css">
+</head>
+<body>
+    <header id="game-header">
+        <div class="timer-display">Time Remaining: <span id="time-left">--:--</span></div>
+    </header>
+
+    <main class="room-container">
+        <h1>The Art Gallery</h1>
+        <p>Portraits stare at you. One painting hangs slightly crooked, revealing a digital safe.</p>
+        
+        <div class="safe-container">
+            <label for="safe-input" class="visually-hidden">Enter 4-digit code</label>
+            <input type="password" id="safe-input" maxlength="4" placeholder="Enter 4-digit code" aria-label="4-digit safe code">
+            <button id="unlock-safe-btn">Unlock</button>
+        </div>
+
+        <div id="safe-reward" class="hidden">
+            <p>The safe clicks open. You found a UV Flashlight!</p>
+            <button id="take-flashlight-btn">Take Flashlight</button>
+        </div>
+
+        <div id="message-box" class="hidden"></div>
+
+        <a href="library.html" class="nav-button">Back to Library</a>
+        <a href="greenhouse.html" class="nav-button">Enter Conservatory</a>
+    </main>
+
+    <div id="inventory-bar"></div>
+
+    <script src="assets/js/timer.js"></script>
+    <script src="assets/js/inventory.js"></script>
+    <script src="assets/js/puzzles.js"></script>
+</body>
+</html>
