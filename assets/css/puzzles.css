@@ -1,0 +1,45 @@
+.puzzle-area {
+    margin: 2rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.book-hotspot {
+    background-color: #444;
+    color: #ccc;
+    border: 2px solid #222;
+    padding: 20px 10px;
+    height: 120px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.book-hotspot:hover {
+    transform: translateY(-10px); 
+    background-color: #555;
+}
+
+.hidden {
+    display: none;
+}
+
+#clue-display {
+    background-color: #331a1a;
+    border: 1px dashed var(--accent-color);
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.nav-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #222;
+    color: white;
+    text-decoration: none;
+    border: 1px solid #555;
+}
+
+.nav-button:hover {
+    background-color: #444;
+}

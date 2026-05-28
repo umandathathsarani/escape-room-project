@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Locked Library | Escape Room</title>
+    
+    <link rel="icon" type="image/png" href="assets/icons/detective (5).png">
+
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/inventory.css">
+    <link rel="stylesheet" href="assets/css/puzzles.css">
+</head>
+<body>
+
+    <header id="game-header">
+        <div class="timer-display">Time Remaining: <span id="time-left">--:--</span></div>
+    </header>
+
+    <main class="room-container">
+        <h1>The Locked Library</h1>
+        <p>Dust covers the ancient books. One shelf looks slightly disturbed...</p>
+
+        <div class="puzzle-area">
+            <button class="book-hotspot" id="normal-book-1">History of Rome</button>
+            <button class="book-hotspot" id="clue-book">The Red Journal</button>
+            <button class="book-hotspot" id="normal-book-2">Botany for Beginners</button>
+        </div>
+
+        <div id="clue-display" class="hidden">
+            <p>You open the dusty red journal. A note falls out: <br><strong>"The gallery safe code is 4-2-7-9"</strong></p>
+        </div>
+
+        <a href="gallery.html" class="nav-button">Walk to Art Gallery</a>
+    </main>
+
+    <script src="assets/js/timer.js"></script>
+    <script src="assets/js/puzzles.js"></script>
+</body>
+</html>
