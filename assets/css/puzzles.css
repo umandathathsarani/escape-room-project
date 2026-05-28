@@ -162,3 +162,31 @@
     letter-spacing: 5px;
     text-transform: uppercase;
 }
+
+@media (max-width: 768px) {
+    .puzzle-area, .paper-puzzle-area {
+        flex-wrap: wrap; 
+        gap: 10px;
+    }
+
+    .book-hotspot, .plant-dropzone {
+        width: 100%; 
+        max-width: 250px;
+    }
+
+    .paper-piece {
+        width: 45px;
+        height: 60px;
+        font-size: 24px; 
+    }
+
+    .vault-panel {
+        padding: 15px;
+    }
+
+    #safe-input, #vault-password {
+        width: 100%;
+        max-width: 200px;
+        letter-spacing: 5px;
+    }
+}

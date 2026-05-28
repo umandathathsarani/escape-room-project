@@ -63,3 +63,17 @@
     justify-content: center;
     gap: 15px;
 }
+
+@media (max-width: 768px) {
+    .leaderboard-table {
+        display: block;
+        overflow-x: auto; 
+        white-space: nowrap;
+        font-size: 14px;
+    }
+
+    .leaderboard-table th, 
+    .leaderboard-table td {
+        padding: 8px 10px;
+    }
+}
