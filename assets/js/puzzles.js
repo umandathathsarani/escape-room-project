@@ -1,3 +1,8 @@
+function playSound(filename) {
+    const audio = new Audio(`assets/audio/${filename}`);
+    audio.play().catch(e => console.log("Audio play prevented by browser"));
+}
+
 const clueBook = document.getElementById('clue-book');
 const clueDisplay = document.getElementById('clue-display');
 const normalBooks = document.querySelectorAll('.book-hotspot:not(#clue-book)');
@@ -5,18 +10,17 @@ const messageBox = document.getElementById('message-box');
 
 if (clueBook && clueDisplay) {
     clueBook.addEventListener('click', () => {
+        playSound('click.mp3');
         clueDisplay.classList.remove('hidden');
     });
 
     normalBooks.forEach(book => {
         book.addEventListener('click', () => {
+            playSound('click.mp3');
             if (messageBox) {
                 messageBox.innerText = "Just a boring old book. Nothing useful here.";
                 messageBox.classList.remove('hidden');
-                
-                setTimeout(() => {
-                    messageBox.classList.add('hidden');
-                }, 3000);
+                setTimeout(() => messageBox.classList.add('hidden'), 3000);
             }
         });
     });
@@ -30,6 +34,7 @@ const takeFlashlightBtn = document.getElementById('take-flashlight-btn');
 if (unlockBtn) {
     unlockBtn.addEventListener('click', () => {
         if (safeInput.value === '4279') {
+            playSound('success.mp3');
             safeReward.classList.remove('hidden');
             unlockBtn.disabled = true;
             safeInput.disabled = true;
@@ -39,6 +44,7 @@ if (unlockBtn) {
                 setTimeout(() => messageBox.classList.add('hidden'), 3000);
             }
         } else {
+            playSound('error.mp3');
             safeInput.value = '';
             if (messageBox) {
                 messageBox.innerText = "Incorrect Code.";
@@ -51,6 +57,7 @@ if (unlockBtn) {
 
 if (takeFlashlightBtn) {
     takeFlashlightBtn.addEventListener('click', () => {
+        playSound('click.mp3');
         let inventory = JSON.parse(localStorage.getItem('escapeInventory')) || [];
         
         if (!inventory.includes('flashlight')) {
@@ -89,6 +96,7 @@ if (plants.length > 0) {
 
             if (draggedItem === 'flashlight') {
                 if (plant.id === 'special-plant') {
+                    playSound('success.mp3');
                     keyReward.classList.remove('hidden');
                     if (messageBox) {
                         messageBox.innerText = "You found something!";
@@ -96,6 +104,7 @@ if (plants.length > 0) {
                         setTimeout(() => messageBox.classList.add('hidden'), 3000);
                     }
                 } else {
+                    playSound('click.mp3');
                     if (messageBox) {
                         messageBox.innerText = "Just ordinary dirt here.";
                         messageBox.classList.remove('hidden');
@@ -109,6 +118,7 @@ if (plants.length > 0) {
 
 if (takeKeyBtn) {
     takeKeyBtn.addEventListener('click', () => {
+        playSound('click.mp3');
         let inventory = JSON.parse(localStorage.getItem('escapeInventory')) || [];
         
         if (!inventory.includes('key')) {
@@ -131,6 +141,7 @@ const vaultLink = document.getElementById('vault-link');
 if (paperPieces.length > 0) {
     paperPieces.forEach(piece => {
         piece.addEventListener('click', () => {
+            playSound('click.mp3');
             let currentRotation = parseInt(piece.getAttribute('data-rotation'));
             currentRotation += 90;
             piece.setAttribute('data-rotation', currentRotation);
@@ -152,6 +163,7 @@ function checkPaperPuzzle() {
     });
 
     if (solved && studyReward) {
+        playSound('success.mp3');
         studyReward.classList.remove('hidden');
         if (vaultLink) {
             vaultLink.classList.remove('hidden');
@@ -185,6 +197,7 @@ if (vaultKeyhole) {
         const draggedItem = e.dataTransfer.getData('text/plain');
 
         if (draggedItem === 'key') {
+            playSound('success.mp3');
             vaultKeyhole.classList.add('inserted');
             vaultKeyhole.innerText = "Key Inserted";
             vaultPassword.disabled = false;
@@ -204,8 +217,12 @@ if (unlockVaultBtn) {
         const pass = vaultPassword.value.trim().toUpperCase();
         
         if (pass === 'NOVA') {
-            window.location.href = 'success.html';
+            playSound('success.mp3');
+            setTimeout(() => {
+                window.location.href = 'success.html';
+            }, 500); 
         } else {
+            playSound('error.mp3');
             vaultPassword.value = '';
             if (messageBox) {
                 messageBox.innerText = "Access Denied.";
