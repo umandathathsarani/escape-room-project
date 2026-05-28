@@ -31,6 +31,7 @@ body {
 .bg-vault { background-image: url('../images/vault.jpg'); }
 .bg-success { background-image: url('../images/success.jpg'); }
 .bg-gameover { background-image: url('../images/gameover.jpg'); }
+.bg-leaderboard { background-image: url('../images/leaderboard.jpg'); }
 
 .room-container {
     text-align: center;
