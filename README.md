@@ -1,6 +1,10 @@
 # 🕵️‍♀️ The Midnight Mansion - Interactive Escape Room
 
-**Live Demo:** [Play the Game Here](https://umanda-escape-room.netlify.app/)
+**Primary Live Demo:** [Play the Game Here (Netlify)](https://umanda-escape-room.netlify.app/)
+
+> **⚠️ Note:** If the primary link above is unavailable due to free-tier usage limits, please use the backup hosting link below!
+> 
+> **Backup Live Demo:** [Play the Game Here (GitHub Pages)](https://umandathathsarani.github.io/escape-room-project/)
 
 ## 📖 Overview
 The Midnight Mansion is a fully interactive, browser-based escape room experience built entirely with Vanilla web technologies. Players are trapped inside a mysterious estate and have exactly 15 minutes to navigate multiple rooms, uncover hidden clues, solve logic puzzles, and escape before the security system locks down. 
